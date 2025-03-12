@@ -73,7 +73,7 @@ function custom_file_upload_form() {
 
 ```
 
-<h5>Make Media file available by user upload or simply cannot view other upload from otehr users</h5>
+<h5>Make Media file available by user upload or simply cannot view other upload from other users</h5>
 
 ```PHP
 
