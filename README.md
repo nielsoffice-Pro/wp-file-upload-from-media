@@ -1,7 +1,7 @@
 # wp-file-upload-from-media
 File upload from media WordPress
 
-```
+```PHP
 <?php 
 
 function vas_dev() { 
