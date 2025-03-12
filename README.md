@@ -72,3 +72,22 @@ function custom_file_upload_form() {
 ?>
 
 ```
+
+<h5>Make Media file available by user upload or simply cannot view other upload from otehr users</h5>
+
+```PHP
+
+ // Make media available only bu user upload
+ add_action( 'pre_get_posts', 'restrict_media_library_to_current_user' );
+ function restrict_media_library_to_current_user( $query ) {
+    // Check if we're on the media library page and the user is not an administrator
+    if ( is_admin() && isset( $query->query_vars['post_type'] ) && 'attachment' === $query->query_vars['post_type'] ) {
+        // Get the current user ID
+        $current_user_id = get_current_user_id();
+
+        // Restrict media to only files uploaded by the current user
+        $query->set( 'author', $current_user_id );
+    }
+}
+
+```
